@@ -18,3 +18,8 @@
 .rules-box p {
     font-size: 14px;
 }
+.word-title {
+    color: #00e5ff;
+    font-size: 35px;
+    font-weight: bold;
+}
