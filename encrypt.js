@@ -103,7 +103,7 @@ let codeWord = "";
 // Generate code word
 
 generateButton.addEventListener("click", function () {
-
+ alert("Encrypt button clicked!");
     const randomIndex = Math.floor(Math.random() * words.length);
 
     codeWord = words[randomIndex];
