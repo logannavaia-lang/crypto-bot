@@ -1,4 +1,4 @@
-alert("Encrypt JS is working!");
+
 
 const words = [
     "APPLE",
@@ -86,7 +86,6 @@ const generateButton = document.querySelector(".generate-word-btn");
 const wordTitle = document.querySelector(".word-title");
 const encryptButton = document.querySelector("#encrypt-btn");
 const messageInput = document.querySelector("#message");
-const output = document.querySelector("#encrypted-output");
 
 let codeWord = "";
 
@@ -106,7 +105,7 @@ generateButton.addEventListener("click", function () {
 // Encrypt message
 encryptButton.addEventListener("click", function () {
 
-    alert("Encrypt button clicked!");
+    
 
     if (codeWord === "") {
 
@@ -157,7 +156,6 @@ encryptButton.addEventListener("click", function () {
 
     }
 
-    alert("Final encrypted text: " + encryptedMessage);
-
+    
 messageInput.value = encryptedMessage;
 });
