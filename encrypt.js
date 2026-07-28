@@ -1,3 +1,4 @@
+alert("Encrypt JS is working!");
 const words = [
     "APPLE",
     "BANANA",
