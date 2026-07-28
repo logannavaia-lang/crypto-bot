@@ -116,7 +116,7 @@ encryptButton.addEventListener("click", function () {
 
     const message = messageInput.value.toUpperCase();
 
-    alert("Message: " + message);
+   
 
     let repeatedCodeWord = codeWord;
 
