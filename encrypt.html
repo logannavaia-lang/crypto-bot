@@ -1,33 +1,107 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
+
+    <title>CryptoBot Encryption</title>
+
     <link rel="stylesheet" href="encrypt.css">
+
 </head>
-<h2 class="encrypted-title">Encrypted Message:</h2>
-<p id="encrypted-output">Waiting...</p>
+
+
 <body style="background-image:url(./encryption.jpeg)">
 
-    <p style="color:rgb(248, 248, 248); font-size:50px;">
+
+    <h2 class="encrypted-title">
+        Encrypted Message:
+    </h2>
+
+
+    <p id="encrypted-output">
+        Waiting...
+    </p>
+
+
+
+    <p style="color:white; font-size:50px;">
         Welcome to the encryption Database
     </p>
+
+
 
     <p style="color:aliceblue; font-size:30px;">
         Enter your text to encrypt it
     </p>
-    
-    
-    <input type="text" id="message" style="width:1000px; height:50px;">
-    <button id="encrypt-btn">Encrypt it</button>
-     
+
+
+
+    <input 
+        type="text" 
+        id="message" 
+        style="width:1000px; height:50px;"
+        placeholder="Enter message">
+
+
+
+    <button id="encrypt-btn">
+        Encrypt it
+    </button>
+
+
+
+
     <div class="word-generator">
-        <button class="generate-word-btn">Generate word</button>
-        <h2 class="word-title">Generate Your Word</h2>
-         
-    
+
+
+        <button class="generate-word-btn">
+            Generate code word
+        </button>
+
+
+
+        <h2 class="word-title">
+            Your code word will appear here
+        </h2>
+
+
     </div>
+
+
+
+
+
+    <div class="rules-box">
+
+        <h3>
+            How to Use
+        </h3>
+
+
+        <p>
+            1. Generate a code word
+            <br><br>
+
+            2. Enter your message
+            <br><br>
+
+            3. Press Encrypt
+            <br><br>
+
+            4. Save your code word
+        </p>
+
+
+    </div>
+
+
+
+
 
     <script src="encrypt.js"></script>
 
+
 </body>
+
 </html>

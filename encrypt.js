@@ -1,4 +1,3 @@
-// 50 possible words for the code word generator
 const words = [
     "APPLE",
     "BANANA",
@@ -51,7 +50,8 @@ const words = [
     "AURORA",
     "CIPHER"
 ];
-// Alphabet for converting letters into positions
+
+
 const alphabet = {
     "A": 1,
     "B": 2,
@@ -81,98 +81,123 @@ const alphabet = {
     "Z": 26
 };
 
-// Finds the Generate Word button
-const button = document.querySelector(".generate-word-btn");
 
-// Finds where the generated word appears
-const title = document.querySelector(".word-title");
 
-// Stores the generated code word
+const generateButton = document.querySelector(".generate-word-btn");
+
+const wordTitle = document.querySelector(".word-title");
+
+const encryptButton = document.querySelector("#encrypt-btn");
+
+const messageInput = document.querySelector("#message");
+
+const output = document.querySelector("#encrypted-output");
+
+
+
 let codeWord = "";
 
 
-// When the Generate Word button is clicked
-button.addEventListener("click", function () {
 
-    // Picks a random position in the word list
+// Generate code word
+
+generateButton.addEventListener("click", function () {
+
     const randomIndex = Math.floor(Math.random() * words.length);
 
-    // Saves the chosen word
     codeWord = words[randomIndex];
 
-    // Displays the word on the page
-    title.textContent = codeWord;
+    wordTitle.textContent = "Code Word: " + codeWord;
+
 });
 
-// Finds the Encrypt button
-const encryptButton = document.querySelector("#encrypt-btn");
-
-// Finds the user's message input
-const messageInput = document.querySelector("#message");
 
 
-// When the Encrypt button is clicked
+
+// Encrypt message
+
 encryptButton.addEventListener("click", function () {
 
-    // Gets the user's message
-    const message = messageInput.value.toUpperCase();
 
-    // Starts the repeated code word
-    let repeatedCodeWord = codeWord;
+    if (codeWord === "") {
 
-    // Repeats the code word until it matches the message length
-    while (repeatedCodeWord.length < message.length) {
-        repeatedCodeWord += codeWord;
+        alert("Please generate a code word first!");
+
+        return;
+
     }
 
-    // Makes sure the code word is not longer than the message
+
+
+    const message = messageInput.value.toUpperCase();
+
+
+
+    let repeatedCodeWord = codeWord;
+
+
+
+    while (repeatedCodeWord.length < message.length) {
+
+        repeatedCodeWord += codeWord;
+
+    }
+
+
+
     repeatedCodeWord = repeatedCodeWord.slice(0, message.length);
 
 
-    // Stores the encrypted message
+
     let encryptedMessage = "";
 
 
-    // Goes through each letter in the message
+
     for (let i = 0; i < message.length; i++) {
 
+
         const messageChar = message[i];
+
         const codeWordChar = repeatedCodeWord[i];
 
 
-        // Checks if both characters are letters
+
         if (alphabet[messageChar] && alphabet[codeWordChar]) {
 
-            // Converts letters into numbers
+
             const messagePosition = alphabet[messageChar];
+
             const codeWordPosition = alphabet[codeWordChar];
 
 
-            // Vigenere cipher math
+
             const encryptedPosition =
                 (messagePosition + codeWordPosition - 1) % 26 + 1;
 
 
-            // Converts number back into a letter
+
             const encryptedChar = Object.keys(alphabet)
-                .find(key => alphabet[key] === encryptedPosition);
+                .find(letter => alphabet[letter] === encryptedPosition);
 
 
-            // Adds encrypted letter
+
             encryptedMessage += encryptedChar;
+
+
 
         } else {
 
-            // Keeps spaces or symbols
+
             encryptedMessage += messageChar;
+
+
         }
+
     }
 
 
-    // Shows the encrypted message
-    messageInput.value = encryptedMessage;
+
+    output.textContent = encryptedMessage;
+
 
 });
-
-    
-

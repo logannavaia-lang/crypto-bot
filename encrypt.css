@@ -1,5 +1,20 @@
-.word-title {
+.rules-box {
+    position: absolute;
+    right: 50px;
+    top: 200px;
+    width: 220px;
     color: white;
-    font-size: 40px;
-    text-shadow: 2px 2px 5px black;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.rules-box h3 {
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.rules-box p {
+    font-size: 14px;
 }
