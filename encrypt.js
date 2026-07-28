@@ -1,4 +1,5 @@
 alert("Encrypt JS is working!");
+
 const words = [
     "APPLE",
     "BANANA",
@@ -52,7 +53,6 @@ const words = [
     "CIPHER"
 ];
 
-
 const alphabet = {
     "A": 1,
     "B": 2,
@@ -82,28 +82,18 @@ const alphabet = {
     "Z": 26
 };
 
-
-
 const generateButton = document.querySelector(".generate-word-btn");
-
 const wordTitle = document.querySelector(".word-title");
-
 const encryptButton = document.querySelector("#encrypt-btn");
-
 const messageInput = document.querySelector("#message");
-
 const output = document.querySelector("#encrypted-output");
-
-
 
 let codeWord = "";
 
 
-
 // Generate code word
-
 generateButton.addEventListener("click", function () {
- alert("Encrypt button clicked!");
+
     const randomIndex = Math.floor(Math.random() * words.length);
 
     codeWord = words[randomIndex];
@@ -113,30 +103,23 @@ generateButton.addEventListener("click", function () {
 });
 
 
-
-
 // Encrypt message
-
 encryptButton.addEventListener("click", function () {
 
+    alert("Encrypt button clicked!");
 
     if (codeWord === "") {
 
         alert("Please generate a code word first!");
-
         return;
 
     }
 
-
-
     const message = messageInput.value.toUpperCase();
 
-
+    alert("Message: " + message);
 
     let repeatedCodeWord = codeWord;
-
-
 
     while (repeatedCodeWord.length < message.length) {
 
@@ -144,61 +127,36 @@ encryptButton.addEventListener("click", function () {
 
     }
 
-
-
     repeatedCodeWord = repeatedCodeWord.slice(0, message.length);
-
-
 
     let encryptedMessage = "";
 
-
-
     for (let i = 0; i < message.length; i++) {
 
-
         const messageChar = message[i];
-
         const codeWordChar = repeatedCodeWord[i];
-
-
 
         if (alphabet[messageChar] && alphabet[codeWordChar]) {
 
-
             const messagePosition = alphabet[messageChar];
-
             const codeWordPosition = alphabet[codeWordChar];
-
-
 
             const encryptedPosition =
                 (messagePosition + codeWordPosition - 1) % 26 + 1;
 
-
-
             const encryptedChar = Object.keys(alphabet)
                 .find(letter => alphabet[letter] === encryptedPosition);
 
-
-
             encryptedMessage += encryptedChar;
-
-
 
         } else {
 
-
             encryptedMessage += messageChar;
-
 
         }
 
     }
 
-
-
     output.textContent = encryptedMessage;
-
 
 });
