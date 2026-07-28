@@ -1,0 +1,42 @@
+
+body {
+    background-size: cover;
+    background-position: center;
+}
+
+
+.home-box {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 25px;
+
+    text-align: center;
+}
+
+
+.home-box h1 {
+    color: white;
+    font-size: 50px;
+}
+
+
+#user-info {
+    color: white;
+    font-size: 25px;
+}
+
+
+button {
+    width: 250px;
+    height: 60px;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}

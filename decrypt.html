@@ -1,0 +1,57 @@
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="decrypt.css">
+    <title>CryptoBot Decrypt</title>
+</head>
+
+<body style="background-image:url(./encryption.jpeg)">
+
+    <p style="color:white; font-size:50px;">
+        Welcome to CryptoBot Database
+    </p>
+
+
+    <p style="color:aliceblue; font-size:30px;">
+        Enter your text to decrypt it
+    </p>
+
+
+    <input 
+        type="text" 
+        id="message" 
+        placeholder="Encrypted message"
+        style="width:1000px; height:50px;">
+
+
+    <input 
+        type="text" 
+        id="codeword" 
+        placeholder="Enter code word"
+        style="width:500px; height:50px;">
+
+
+    <button id="decrypt-btn">
+        Decrypt it
+    </button>
+
+
+    <h2 class="decrypted-title">
+        Decrypted Message:
+    </h2>
+
+
+    <p id="decrypted-output">
+        Waiting...
+    </p>
+
+
+    <script src="decrypt.js"></script>
+
+</body>
+
+</html>
+```
