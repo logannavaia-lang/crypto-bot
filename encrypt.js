@@ -157,6 +157,7 @@ encryptButton.addEventListener("click", function () {
 
     }
 
-    output.textContent = encryptedMessage;
+    alert("Final encrypted text: " + encryptedMessage);
 
+output.textContent = encryptedMessage;
 });
